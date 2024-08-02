@@ -1,48 +1,108 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
-    <script src="./logic.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Up</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./logic.js" defer></script>
     <style>
+        body {
+            height: 100vh;
+            display: flex;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-image: url("./assets/Coffee.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+        }
+
+        .form-container {
+            width: 75%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
         .row {
             display: flex;
             flex-direction: row;
             gap: 20px;
         }
 
-        .form {
-            display: flex;
-            flex-direction: column;
+        input {
+            font: inherit;
+            padding: 5px;
+            width: 33ch;
+            border: #E5E7EB solid 1px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 10px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        :focus {
+            border: blue solid 1px;
+            box-shadow: 100px;
         }
     </style>
 </head>
 
 <body>
-    <div class="row">
-        <form action="">
-            <div class="row">
-                <div class="form">
-                    <label for="fName">First Name</label>
-                    <input type="text" id="fName">
-                    <label for="email">Email</label>
-                    <input type="email" id="email">
-                    <label for="password">Password</label>
-                    <input type="password" id="password">
+    <div class="container">
+        <div class="sidebar">ALL THAT COFFEE</div>
+        <div class="form-container">
+            <form action="">
+                <div class="row">
+                    <div class="form">
+                        <label for="fName">First Name</label>
+                        <input type="text" id="fName" name="firstName">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form">
+                        <label for="lName">Last Name</label>
+                        <input type="text" id="lName" name="lastName">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber">
+                        <label for="confpassword">Confirm Password</label>
+                        <input type="password" id="confpassword" name="confirmPassword" required>
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
                 </div>
-                <div class="form">
-                    <label for="lName">Last Name</label>
-                    <input type="text" id="lName">
-                    <label for="phoneNumber">Phone Number</label>
-                    <input type="text" id="phoneNumber">
-                    <label for="confpassword">Confirm Password</label>
-                    <input type="password" id="confpassword">
-                </div>
-            </div>
-
-        </form>
+            </form>
+        </div>
     </div>
 </body>
 
